@@ -1,0 +1,23 @@
+.sa-cabecera{
+  border-width: 10px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(34%);
+  width: 600px;
+  height: 400px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.sa-espaciado {
+  height: 250px;
+}
