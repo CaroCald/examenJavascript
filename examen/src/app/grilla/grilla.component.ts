@@ -7,32 +7,27 @@ import {ConductorService} from "../conductor.service";
   styleUrls: ['./grilla.component.css']
 })
 export class GrillaComponent implements OnInit {
-
-  constructor(private conductor:ConductorService) {
-
-  }
+@Input() nombreDescripcion:string;
+@Input() apellidoDescripcion:string;
+  @Output() dioClickEnEstado: EventEmitter<boolean> = new EventEmitter();
   @Input() nombres:string;
   @Input() apellidos: string;
   @Input() fechaNacimiento: string;
   @Input() numeroAutos: number;
   @Input() licenciaValida: boolean;
-  @Input() chasis:number;
-  @Input() nombreMarca: string;
-  @Input() colorUno: string;
-  @Input() colorDos: string;
-  @Input() nombreModelo:string;
-  @Input() anio: number;
-  @Input() idConductor:number;
   @Input() urlImagen:string;
   @Input() valorBotonCrear='';
-  @Output() dioClickEnEstado: EventEmitter<boolean> = new EventEmitter();
-    contador:number;
+  contador:number;
+
+  constructor(private conductor:ConductorService) {
+
+  }
+
 
 
   ngOnInit() {
-    this.cargarDescripciones();
-  }
 
+  }
   public crearConductores(nombresForm, apellidosForm, fechaForm, numeroAutosForm, licenciaForm){
     this.contador++;
     this.nombres=nombresForm;
@@ -45,11 +40,9 @@ export class GrillaComponent implements OnInit {
   }
 
   cargarDescripciones(){
-   this.valorBotonCrear=this.conductor.conductoresArreglo.toString();
+    this.valorBotonCrear=this.conductor.conductoresArreglo.toString();
   }
-
   hizoClickEnEstado() {
     this.dioClickEnEstado.emit(true);
   }
-
 }

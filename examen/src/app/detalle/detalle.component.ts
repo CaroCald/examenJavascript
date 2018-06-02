@@ -9,9 +9,16 @@ import {GrillaComponent} from "../grilla/grilla.component";
 })
 export class DetalleComponent implements OnInit {
 botonCargar:string;
-detalles:string;
-  constructor(public conductor: ConductorService) { }
 
+  constructor(public conductor: ConductorService) { }
+  @Input() chasis:number;
+  @Input() nombreMarca: string;
+  @Input() colorUno: string;
+  @Input() colorDos: string;
+  @Input() nombreModelo:string;
+  @Input() anio: number;
+  @Input() idConductor:number;
+  @Input() detalles:string;
   ngOnInit() {
     this.detalles='AQUI VA ESO';
   }

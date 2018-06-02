@@ -1,15 +1,28 @@
 
 <div class="row">
-  <div class="col-sm-6">
-    <app-cabecera></app-cabecera>
+  <div class="col-sm-6" >
+    <app-cabecera>
+    </app-cabecera>
   </div>
   <div class="col-sm-6">
     <h1>FORMULARIO</h1>
-    <app-grilla></app-grilla>
+    <app-grilla *ngFor="let conductor of arregloConductores"
+        [nombres]="conductor.nombres"
+        [apellidos]="conductor.apellidos"
+        [fechaNacimiento]="conductor.fechaNacimiento"
+        [numeroAutos]="conductor.numeroAutos"
+        [licenciaValida]="conductor.licenciaValida"
+        (dioClickEnEstado)="alertar($event)"
+    >
+    </app-grilla>
 </div>
 </div>
 
-<app-detalle></app-detalle>
+<app-detalle *ngFor="let conductor of arregloConductores"
+[detalles]="conductor.apellidos"
+>
+
+</app-detalle>
 <div>
 <p-table>
   <ng-template pTemplate="header">

@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ConductorService} from "../conductor.service";
 
 @Component({
   selector: 'app-cabecera',
@@ -8,9 +9,12 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CabeceraComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private conductor: ConductorService) { }
 
   ngOnInit() {
   }
+
+
+
 
 }
