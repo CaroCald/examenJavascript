@@ -1,3 +1,60 @@
-<p>
-  detalle works!
-</p>
+<div class="sa-espaciado"></div>
+<h1>GRILLA</h1>
+<div class="row">
+  <div class="col-sm-3" >
+    <button  type="button" class="btn btn-lg btn-primary" disabled>
+    {{botonCargar}}
+  </button>
+  </div>
+</div>
+
+<h1>DETALLES</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <h3 class="first">Chasis</h3>
+    <span class="ui-float-label">
+    <input id="float-input" type="text" size="30" pInputText #textoChasis>
+    <label for="float-input"></label>
+</span>
+    <div></div>
+    <h3 class="first">Nombre de la marca</h3>
+    <span class="ui-float-label">
+    <input id="float-input2" type="text" size="30" pInputText #textoNombreMarca>
+    <label for="float-input2"></label>
+</span>
+
+    <h3 class="first">Color Uno</h3>
+    <span class="ui-float-label">
+    <input id="float-input3" type="text" size="30" pInputText #textoColorUno>
+    <label for="float-input3"></label>
+</span>
+    <h3 class="first">Color Dos</h3>
+    <span class="ui-float-label">
+    <input id="float-input4" type="text" size="30" pInputText #textoColorDos>
+    <label for="float-input4"></label>
+</span>
+
+    <h3 class="first">Modelo</h3>
+    <span class="ui-float-label">
+    <input id="float-input5" type="text" size="30" pInputText #textoModelo>
+    <label for="float-input5"></label>
+</span>
+
+    <h3 class="first">Año</h3>
+    <span class="ui-float-label">
+    <input id="float-input6" type="text" size="30" pInputText #textoAnio>
+    <label for="float-input6"></label>
+</span>
+
+    <div class="row">
+      <div class="col-sm6">   <p-button label="Limpiar"></p-button></div>
+      <div class="col-sm6"><p-button (onClick)="conductor.anadirCondutores(textoChasis,textoNombreMarca, textoColorUno, textoColorDos, textoModelo, textoAnio) "label="Crear"></p-button></div>
+    </div>
+
+  </div>
+  <div class="col-sm-6">
+    <p-card title="Simple Card" [style]="{width: '360px'}">
+      <div>{{detalles}}</div>
+    </p-card>
+  </div>
+</div>

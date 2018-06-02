@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { GrillaComponent } from './grilla/grilla.component';
 import { DetalleComponent } from './detalle/detalle.component';
@@ -9,7 +8,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button'
-
+import {FormsModule} from "@angular/forms";
+import {CardModule} from 'primeng/card';
+import {TableModule} from 'primeng/table';
+import {ConductorService} from "./conductor.service";
+import {ButtonModule} from 'primeng/button';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,10 +22,10 @@ import {MatButtonModule} from '@angular/material/button'
     CabeceraComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule, CardModule,TableModule, ButtonModule, NgbModule.forRoot(),
     BrowserAnimationsModule, MatFormFieldModule, MatInputModule, MatButtonModule,
   ],
-  providers: [],
+  providers: [ConductorService, GrillaComponent],
   bootstrap: [AppComponent, CabeceraComponent]
 })
 export class AppModule { }

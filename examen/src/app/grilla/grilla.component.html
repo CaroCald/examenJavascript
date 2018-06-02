@@ -1,1 +1,37 @@
-<button (click)="cargarDescripciones()" type="button" class="btn btn-lg btn-primary" disabled>{{nombres}}{{apellidos}}</button>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre" name="nombres" id="nombres"  #textoNombre>
+  </mat-form-field>
+  <div class="sa-espaciado"></div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Apellido" name="apellidos" value="" #textoApellido>
+  </mat-form-field>
+  <div class="sa-espaciado"></div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Fecha Nacimiento" name ="fechaNacimiento" #textoFecha >
+  </mat-form-field>
+  <div class="sa-espaciado"></div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Numero de Autos" name="numeroAutos" value="" #textoAutos>
+  </mat-form-field>
+  <div class="sa-espaciado"></div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Licencia" value="" name ="licenciaValida" #textoLicencia>
+  </mat-form-field>
+</form>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="button-row">
+      <button  mat-raised-button>Limpiar</button>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="button-row">
+      <button (click)="crearConductores(textoNombre.value, textoApellido.value,
+      textoFecha.value, textoAutos.value, textoLicencia.value)" (click)="hizoClickEnEstado()"
+              mat-raised-button>Crear</button>
+    </div>
+  </div>
+</div>
+
+

@@ -5,58 +5,29 @@
   </div>
   <div class="col-sm-6">
     <h1>FORMULARIO</h1>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Nombre" value="">
-      </mat-form-field>
-      <div class="sa-espaciado"></div>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Apellido" value="">
-      </mat-form-field>
-      <div class="sa-espaciado"></div>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Fecha Nacimiento" value="">
-      </mat-form-field>
-      <div class="sa-espaciado"></div>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Numero de Autos" value="">
-      </mat-form-field>
-      <div class="sa-espaciado"></div>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Licencia" value="">
-      </mat-form-field>
-    </form>
-
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="button-row">
-          <button mat-raised-button>Limpiar</button>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="button-row">
-          <button mat-raised-button>Crear</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-<div class="sa-espaciado"></div>
-<h1>GRILLA</h1>
-<div class="row">
-  <div class="col-sm-3">
     <app-grilla></app-grilla>
-  </div>
-  <div class="col-sm-3"><app-grilla></app-grilla></div>
-  <div class="col-sm-3"><app-grilla></app-grilla></div>
-  <div class="col-sm-3"><app-grilla></app-grilla></div>
+</div>
 </div>
 
-<div class="row">
-  <div class="col-sm-3">13</div>
-  <div class="col-sm-3">14</div>
-  <div class="col-sm-3">13</div>
-  <div class="col-sm-3">14</div>
+<app-detalle></app-detalle>
+<div>
+<p-table>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Vin</th>
+      <th>Year</th>
+      <th>Brand</th>
+      <th>Color</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body">
+    <tr>
+      <td>sdasdasd</td>
+      <td>dasdd</td>
+      <td>dasd</td>
+      <td>ddsadad</td>
+    </tr>
+  </ng-template>
+</p-table>
 </div>
 
