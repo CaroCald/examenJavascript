@@ -7,20 +7,6 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
 
-  @Input() nombres:string;
-  @Input() apellidos: string;
-  @Input() fechaNacimiento: string;
-  @Input() numeroAutos: number;
-  @Input() licenciaValida: boolean;
-  @Input() chasis:number;
-  @Input() nombreMarca: string;
-  @Input() colorUno: string;
-  @Input() colorDos: string;
-  @Input() nombreModelo:string;
-  @Input() anio: number;
-  @Input() idConductor:number;
-  @Input() urlImagen:string;
-
 
   constructor() { }
 

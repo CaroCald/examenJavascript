@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+
+  @Input() chasis:number;
+  @Input() nombreMarca: string;
+  @Input() colorUno: string;
+  @Input() colorDos: string;
+  @Input() nombreModelo:string;
+  @Input() anio: number;
+  @Input() idConductor:number;
+  @Input() urlImagen:string;
 
 }

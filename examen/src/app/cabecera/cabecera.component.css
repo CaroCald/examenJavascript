@@ -20,4 +20,13 @@
 }
 .sa-espaciado {
   height: 250px;
+  width: 100px;
+}
+.sa-espaciado-w {
+  width: 100px;
+}
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-grilla',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grilla.component.css']
 })
 export class GrillaComponent implements OnInit {
-
+  @Input() nombres:string;
+  @Input() apellidos: string;
+  @Input() fechaNacimiento: string;
+  @Input() numeroAutos: number;
+  @Input() licenciaValida: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
+  cargarDescripciones(){
+    nom
+  }
 }
