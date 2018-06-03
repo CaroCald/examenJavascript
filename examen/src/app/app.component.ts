@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {ConductorService} from "./conductor.service";
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,10 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+constructor(condutor: ConductorService
+            ){
 
+}
   arregloConductores=[
     {
       nombres:'',
@@ -35,5 +39,10 @@ export class AppComponent {
     alert('DIO CLICK EN ES ESTRENO!!!!!!!!!');
   }
 
+  llenarDescripcion(){
+
+  }
+
 }
+
 

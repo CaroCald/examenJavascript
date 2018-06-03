@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Conductor, ConductorService} from "../conductor.service";
 import {GrillaComponent} from "../grilla/grilla.component";
 
@@ -7,7 +7,7 @@ import {GrillaComponent} from "../grilla/grilla.component";
   templateUrl: './detalle.component.html',
   styleUrls: ['./detalle.component.css']
 })
-export class DetalleComponent implements OnInit {
+export class DetalleComponent implements OnInit , OnChanges{
 botonCargar:string;
 
   constructor(public conductor: ConductorService) { }
@@ -18,15 +18,21 @@ botonCargar:string;
   @Input() nombreModelo:string;
   @Input() anio: number;
   @Input() idConductor:number;
-  @Input() detalles:string;
+
+  detalles:string;
   ngOnInit() {
-    this.detalles='AQUI VA ESO';
+    //this.detalles= this.colocarValor();
   }
+ngOnChanges(seActualizo){
 
+}
 
+colocarDetalles(textoChasis,textoNombreMarca, textoColorUno, textoColorDos, textoModelo, textoAnio){
+  this.conductor.anadirCondutores(textoChasis,textoNombreMarca, textoColorUno, textoColorDos, textoModelo, textoAnio)
+  this.detalles=this.colocarValor();
+}
 colocarValor(){
-    console.log(this.conductor.conductoresArreglo.toString());
-    this.botonCargar=this.conductor.conductoresArreglo[0].nombre;
+   return this.chasis +'' + this.nombreMarca + '' +this.colorUno + ' '+this.colorDos+ ' '+this.nombreModelo+ ' '+this.anio;
 }
 
 

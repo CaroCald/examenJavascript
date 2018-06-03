@@ -15,32 +15,11 @@
         (dioClickEnEstado)="alertar($event)"
     >
     </app-grilla>
+
+
 </div>
 </div>
 
-<app-detalle *ngFor="let conductor of arregloConductores"
-[detalles]="conductor.apellidos"
->
 
-</app-detalle>
-<div>
-<p-table>
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Vin</th>
-      <th>Year</th>
-      <th>Brand</th>
-      <th>Color</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body">
-    <tr>
-      <td>sdasdasd</td>
-      <td>dasdd</td>
-      <td>dasd</td>
-      <td>ddsadad</td>
-    </tr>
-  </ng-template>
-</p-table>
-</div>
 
+<app-detalle></app-detalle>
