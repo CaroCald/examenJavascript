@@ -14,18 +14,21 @@ import {TableModule} from 'primeng/table';
 import {ConductorService} from "./conductor.service";
 import {ButtonModule} from 'primeng/button';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TablaComponent } from './tabla/tabla.component';
+import {Http, HttpModule} from "@angular/http";
 @NgModule({
   declarations: [
     AppComponent,
     GrillaComponent,
     DetalleComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    TablaComponent,
   ],
   imports: [
-    BrowserModule, FormsModule, CardModule,TableModule, ButtonModule, NgbModule.forRoot(),
+    BrowserModule, FormsModule, CardModule,TableModule, ButtonModule, NgbModule.forRoot(), HttpModule,
     BrowserAnimationsModule, MatFormFieldModule, MatInputModule, MatButtonModule,
   ],
-  providers: [ConductorService, GrillaComponent],
+  providers: [ConductorService, GrillaComponent ],
   bootstrap: [AppComponent, CabeceraComponent]
 })
 export class AppModule { }

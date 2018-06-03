@@ -7,32 +7,31 @@ import {ConductorService} from "./conductor.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-constructor(condutor: ConductorService
-            ){
-
+constructor(condutor: ConductorService){
 }
+
   arregloConductores=[
     {
-      nombres:'',
-      apellidos: '',
+      nombres: 'Arturo Perez',
+      apellidos:'',
       fechaNacimiento:'',
-      numeroAutos: '',
-      licenciaValida: '',
-      urlImagen: 'https://s3-us-west-1.amazonaws.com/suzukiautos/models/home/gallery/9f62e3b4a2825910542eb54e8a5c148bcc61df9e.png',
+      numeroAutos:'',
+      licenciaValida:'',
+      detalles: [
+        {
+          chasis: 122,
+          nombreMarca: 'Honda',
+          colorUno: 'Rojo',
+          colorDos: 'Verde',
+          nombreModelo: 'X199',
+          anio: 2015,
+          idConductor: 1
+        }
+      ]
     },
+];
 
-  ];
-  detalles=[
-    {
-      chasis:0,
-      nombreMarca: '',
-      colorUno:'',
-      colorDos: '',
-      nombreModelo:'',
-      anio: 0,
-      idConductor:0
-    }
-    ]
+
 
   alertar(evento) {
     console.log('Evento: ', evento); // true

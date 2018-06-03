@@ -1,10 +1,12 @@
-
+<!-- INICIO -->
 <div class="row">
   <div class="col-sm-6" >
+    <!-- CAROUSEL CON IMAGENES-->
     <app-cabecera>
     </app-cabecera>
   </div>
   <div class="col-sm-6">
+    <!-- GRILLA CON LOS DETALLES DEL FORMULARIO -->
     <h1>FORMULARIO</h1>
     <app-grilla *ngFor="let conductor of arregloConductores"
         [nombres]="conductor.nombres"
@@ -15,11 +17,8 @@
         (dioClickEnEstado)="alertar($event)"
     >
     </app-grilla>
-
-
 </div>
 </div>
-
-
-
+<!-- DETALLE Y CARD-->
 <app-detalle></app-detalle>
+<app-tabla></app-tabla>

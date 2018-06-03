@@ -1,7 +1,12 @@
 import {Injectable} from "@angular/core";
+import {Http} from "@angular/http";
+import {ConductoresInterface} from "./tabla/conductores.interface";
 
 @Injectable()
 export class ConductorService {
+
+  constructor(private http: Http) {}
+
   conductoresArreglo: Conductor[]=[];
   detallesArreglo: Detalles[]=[];
   anadirCondutores( nombre, apellido, fecha, num, licencia, id){
@@ -12,13 +17,22 @@ export class ConductorService {
     this.detallesArreglo.push(new Detalles(nombre, chasis,marca, colorUno, colorDos, modelo, anio));
     return this.detallesArreglo;
   }
+
+  getEmployeesMedium() {
+    return this.http.get('app/conductores.json')
+      .toPromise()
+      .then(res => <ConductoresInterface[]> res.json().data)
+      .then(data => { return data; });
+  }
 }
 export class Conductor {
-  constructor(public nombre: string,
-              public apellido: string,
-              public fechaNacmiento: string,
-              public numAutos: number,
-              public licencia: boolean, public id:number) {
+
+  constructor( public nombre: string,
+  public apellido: string,
+  public fechaNacmiento: string,
+  public numAutos: number,
+  public licencia: boolean,
+  public id:number) {
 
   }
 }

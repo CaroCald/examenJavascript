@@ -1,0 +1,21 @@
+<h1>TABLA</h1>
+<p-table [value]="conductoresInterface">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Numero Autos</th>
+      <th>Fecha Nacimiento</th>
+      <th>Licencia Valida</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-conductoresInterface>
+    <tr>
+      <td>{{conductoresInterface.nombre}}</td>
+      <td>{{conductoresInterface.apellido}}</td>
+      <td>{{conductoresInterface.numeroAutos}}</td>
+      <td>{{conductoresInterface.fechaNacimiento}}</td>
+      <td>{{conductoresInterface.licenciaValida}}</td>
+    </tr>
+  </ng-template>
+</p-table>
