@@ -5,7 +5,7 @@ import {ConductoresInterface} from "./tabla/conductores.interface";
 @Injectable()
 export class ConductorService {
 
-  constructor(private http: Http) {}
+  constructor() {}
 
   conductoresArreglo: Conductor[]=[];
   detallesArreglo: Detalles[]=[];
@@ -18,12 +18,7 @@ export class ConductorService {
     return this.detallesArreglo;
   }
 
-  getEmployeesMedium() {
-    return this.http.get('app/conductores.json')
-      .toPromise()
-      .then(res => <ConductoresInterface[]> res.json().data)
-      .then(data => { return data; });
-  }
+
 }
 export class Conductor {
 

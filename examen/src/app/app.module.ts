@@ -15,7 +15,7 @@ import {ConductorService} from "./conductor.service";
 import {ButtonModule} from 'primeng/button';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TablaComponent } from './tabla/tabla.component';
-import {Http, HttpModule} from "@angular/http";
+import {CarouselModule} from "primeng/primeng";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +25,8 @@ import {Http, HttpModule} from "@angular/http";
     TablaComponent,
   ],
   imports: [
-    BrowserModule, FormsModule, CardModule,TableModule, ButtonModule, NgbModule.forRoot(), HttpModule,
-    BrowserAnimationsModule, MatFormFieldModule, MatInputModule, MatButtonModule,
+    BrowserModule, FormsModule, CardModule,TableModule, ButtonModule, NgbModule.forRoot(),
+    BrowserAnimationsModule, MatFormFieldModule, MatInputModule, MatButtonModule, CarouselModule,
   ],
   providers: [ConductorService, GrillaComponent ],
   bootstrap: [AppComponent, CabeceraComponent]
