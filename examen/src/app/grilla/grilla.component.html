@@ -22,7 +22,7 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="button-row">
-      <button (click)="limpiar(textoNombre.value, textoApellido.value, textoFecha.value, textoAutos.value, textoLicencia.value)" mat-raised-button>Limpiar</button>
+      <button (click)="limpiar()" mat-raised-button>Limpiar</button>
     </div>
   </div>
   <div class="col-sm-6">
@@ -36,8 +36,8 @@
 <div class="sa-espaciado"></div>
 <h1>GRILLA</h1>
 <div class="row">
-  <div class="col-sm-3">
-    <button (click)="colocarValor()" type="button" class="btn btn-lg btn-primary">
+  <div class="col-sm-3" >
+    <button (click)="clickEnBoton()" )type="button" class="btn btn-lg btn-primary" *ngFor="let variable of arregloNuevo">
      {{card}}
     </button>
   </div>

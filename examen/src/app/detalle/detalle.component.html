@@ -4,44 +4,41 @@
     <h1>DETALLES</h1>
     <h5 class="first">Chasis</h5>
     <span class="ui-float-label">
-      <input id="float-input" type="text" size="30" [(ngModel)]="chasis" pInputText #textoChasis>
-      <label for="float-input"></label>
-        </span>
+      <input id="chasis" name="chasis" size="30" [(ngModel)]="chasis" pInputText #textoChasis>
+      <label for="chasis"></label>
+    </span>
 
     <h5 class="first">Nombre de la marca</h5>
     <span class="ui-float-label">
-      <input id="float-input2" type="text" size="30" [(ngModel)]="nombreMarca" pInputText #textoNombreMarca>
-      <label for="float-input2"></label>
-      </span>
+      <input id="nombreMarca" name="nombreMarca"  size="30" [(ngModel)]="nombreMarca" pInputText #textoNombreMarca>
+      <label for="nombreMarca"></label>
+    </span>
 
     <h5 class="first">Color Uno</h5>
     <span class="ui-float-label">
-      <input id="float-input3" type="text" size="30" pInputText [(ngModel)] ="colorUno" #textoColorUno>
-      <label for="float-input3"></label>
-        </span>
+      <input id="colorUno"  name="colorUno"  size="30" pInputText [(ngModel)] ="colorUno" #textoColorUno>
+      <label for="colorUno"></label>
+    </span>
 
     <h5 class="first">Color Dos</h5>
     <span class="ui-float-label">
-      <input id="float-input4" type="text" size="30" pInputText [(ngModel)]="colorDos" #textoColorDos>
-      <label for="float-input4"></label>
-      </span>
+      <input id="colorDos" name="colorDos"  size="30" pInputText [(ngModel)]="colorDos" #textoColorDos>
+      <label for="colorDos"></label>
+    </span>
 
     <h5 class="first">Modelo</h5>
     <span class="ui-float-label">
-      <input id="float-input5" type="text" size="30" pInputText [(ngModel)]="nombreModelo" #textoModelo>
-      <label for="float-input5"></label>
-        </span>
+      <input id="nombreModelo" name="nombreModelo" type="text" size="30" pInputText [(ngModel)]="nombreModelo" #textoModelo>
+      <label for="nombreModelo"></label>
+    </span>
 
     <h5 class="first">Año</h5>
     <span class="ui-float-label">
-      <input id="float-input6" type="text" size="30" pInputText [(ngModel)]="anio" #textoAnio>
-      <label for="float-input6"></label>
-        </span>
-
-
-    <p-button label="Limpiar"></p-button>
-    <p-button (onClick)="colocarDetalles(textoChasis,textoNombreMarca, textoColorUno, textoColorDos, textoModelo, textoAnio) "label="Crear"></p-button>
-
+      <input id="anio" name="anio" size="30" pInputText [(ngModel)]="anio" #textoAnio>
+      <label for="anio"></label>
+    </span>
+    <p-button (onClick)="colocarDetalles(textoChasis.value,textoNombreMarca.value, textoColorUno.value, textoColorDos.value, textoModelo.value, textoAnio.value)" label="Crear"></p-button>
+    <p-button (onclick)="limpiar()" label="Limpiar"></p-button>
   </div>
   <div class="col-sm-6">
     <h1>CARD</h1>

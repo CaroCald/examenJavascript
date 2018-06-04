@@ -12,7 +12,7 @@ constructor(condutor: ConductorService){
 
   arregloConductores=[
     {
-      nombres: 'Arturo Perez',
+      nombres: '',
       apellidos:'',
       fechaNacimiento:'',
       numeroAutos:'',

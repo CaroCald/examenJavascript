@@ -4,11 +4,11 @@ import { AppComponent } from './app.component';
 import { GrillaComponent } from './grilla/grilla.component';
 import { DetalleComponent } from './detalle/detalle.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button'
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from "@angular/forms";import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 import {CardModule} from 'primeng/card';
 import {TableModule} from 'primeng/table';
 import {ConductorService} from "./conductor.service";

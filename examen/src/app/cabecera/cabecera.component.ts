@@ -8,13 +8,8 @@ import {ConductorService} from "../conductor.service";
 })
 export class CabeceraComponent implements OnInit {
 
-
   constructor(private conductor: ConductorService) { }
 
   ngOnInit() {
   }
-
-
-
-
 }

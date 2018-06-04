@@ -1,7 +1,4 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
-import {ConductoresInterface} from "./tabla/conductores.interface";
-
 @Injectable()
 export class ConductorService {
 
@@ -9,6 +6,7 @@ export class ConductorService {
 
   conductoresArreglo: Conductor[]=[];
   detallesArreglo: Detalles[]=[];
+
   anadirCondutores( nombre, apellido, fecha, num, licencia, id){
     this.conductoresArreglo.push(new Conductor(''+nombre, ''+apellido, ''+fecha, num, licencia, id));
     return this.conductoresArreglo;
@@ -17,7 +15,14 @@ export class ConductorService {
     this.detallesArreglo.push(new Detalles(nombre, chasis,marca, colorUno, colorDos, modelo, anio));
     return this.detallesArreglo;
   }
+  devolverArreglo(){
+    return this.conductoresArreglo;
+  }
 
+    colocarDescripcion(){
+
+
+    }
 
 }
 export class Conductor {
