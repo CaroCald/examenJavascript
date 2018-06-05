@@ -8,9 +8,7 @@ import {GrillaComponent} from "../grilla/grilla.component";
   styleUrls: ['./detalle.component.css']
 })
 export class DetalleComponent implements OnInit , OnChanges{
-botonCargar:string;
-conductores:Conductor[];
-  constructor(public conductor: ConductorService) {
+constructor(public conductor: ConductorService) {
 
   }
   @Input() chasis:number;
@@ -22,6 +20,9 @@ conductores:Conductor[];
   @Input() idConductor:number;
 
   detalles:string;
+  chasisDetalle=this.chasis;
+  nombreMarcaAuto=this.nombreMarca;
+  colorUnoAuto=this.colorUno;
   ngOnInit() {
     //this.detalles= this.colocarValor();
   }
@@ -30,11 +31,14 @@ conductores:Conductor[];
   }
 
 colocarDetalles(textoChasis,textoNombreMarca, textoColorUno, textoColorDos, textoModelo, textoAnio){
-  this.conductor.anadirCondutores(textoChasis,textoNombreMarca, textoColorUno, textoColorDos, textoModelo, textoAnio)
+  this.conductor.anadirCondutores(textoChasis,textoNombreMarca, textoColorUno, textoColorDos, textoModelo, textoAnio);
   this.detalles=this.colocarValor();
+  this.chasisDetalle=textoChasis;
+  this.nombreMarcaAuto=textoNombreMarca;
+  this.colorUnoAuto=textoColorUno;
 }
 colocarValor(){
-   return 'Chasis: '+this.chasis +' Nombre Marca: ' + this.nombreMarca + ' Color Uno: ' +this.colorUno + 'Color Dos:  '+this.colorDos+ 'Nombre Modelo:  '+this.nombreModelo+ 'Año:  '+this.anio;
+   return 'Chasis: '+this.chasis +' /n Nombre Marca: ' + this.nombreMarca + ' Color Uno: ' +this.colorUno + 'Color Dos:  '+this.colorDos+ 'Nombre Modelo:  '+this.nombreModelo+ 'Año:  '+this.anio;
 }
 
 limpiar(){
@@ -45,4 +49,9 @@ limpiar(){
     this.colorDos="";
     this.colorDos="";
 }
+
+  resetForm(form) {
+    const resetForm = <HTMLFormElement>document.getElementById(''+form);
+    resetForm.reset();
+  }
 }

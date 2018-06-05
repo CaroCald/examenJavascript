@@ -1,24 +1,122 @@
 <!-- INICIO -->
 <div class="row">
   <div class="col-sm-6" >
-    <!-- CAROUSEL CON IMAGENES-->
     <app-cabecera>
     </app-cabecera>
   </div>
   <div class="col-sm-6">
-    <!-- GRILLA CON LOS DETALLES DEL FORMULARIO -->
     <h1>FORMULARIO</h1>
-    <app-grilla *ngFor="let conductor of arregloConductores"
-        [nombres]="conductor.nombres"
-        [apellidos]="conductor.apellidos"
-        [fechaNacimiento]="conductor.fechaNacimiento"
-        [numeroAutos]="conductor.numeroAutos"
-        [licenciaValida]="conductor.licenciaValida"
-        (dioClickEnEstado)="alertar($event)"
-    >
-    </app-grilla>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre" name="nombres" id="nombres" [(ngModel)]="nombres" #textoNombre>
+      </mat-form-field>
+      <div class="sa-espaciado"></div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Apellido" name="apellidos" [(ngModel)]="apellidos" #textoApellido>
+      </mat-form-field>
+      <div class="sa-espaciado"></div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Fecha Nacimiento" name ="fechaNacimiento" [(ngModel)]="fechaNacimiento" #textoFecha >
+      </mat-form-field>
+      <div class="sa-espaciado"></div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Numero de Autos" name="numeroAutos" [(ngModel)]="numeroAutos" #textoAutos>
+      </mat-form-field>
+      <div class="sa-espaciado"></div>
+      <mat-radio-group name="retirado" style="margin-top: 5px" [(ngModel)]="licenciaValida">
+        <mat-label>Licencia Valida: </mat-label>
+        <mat-radio-button class="example-margin" style="padding-left: 20px" [value]=true>Si</mat-radio-button>
+        <mat-radio-button class="example-margin" style="padding-left: 20px" [value]=false>No</mat-radio-button>
+      </mat-radio-group>
+    </form>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="button-row">
+          <button (click)="limpiar()" mat-raised-button>Limpiar</button>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="button-row">
+          <button (click)="agregarDatos(textoNombre, textoApellido, textoFecha, textoAutos, true)" mat-raised-button>Crear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+<div class="col-sm3 text-center" *ngFor="let conductores of arregloConductores">
+  <button (click)="clickEnBoton()" id="card" type="button" class="btn btn-lg btn-primary">
+    {{card}}
+  </button>
 </div>
 </div>
 <!-- DETALLE Y CARD-->
-<app-detalle></app-detalle>
+<div class="row">
+  <div class="col-sm-6" >
+    <h1>DETALLES</h1>
+
+    <form id="formDetalle" class="example-form" #detalle="ngForm">
+
+      <h5 class="first">Chasis</h5>
+      <span class="ui-float-label">
+      <input id="chasis" name="chasis" size="30" value="chasis" [(ngModel)]="chasis" pInputText #textoChasis>
+      <label for="chasis"></label>
+    </span>
+
+      <h5 class="first">Nombre de la marca</h5>
+      <span class="ui-float-label">
+      <input id="nombreMarca" name="nombreMarca"  size="30" [(ngModel)]="nombreMarca" pInputText #textoNombreMarca>
+      <label for="nombreMarca"></label>
+    </span>
+
+      <h5 class="first">Color Uno</h5>
+      <span class="ui-float-label">
+      <input id="colorUno"  name="colorUno"  size="30" pInputText [(ngModel)] ="colorUno" #textoColorUno>
+      <label for="colorUno"></label>
+    </span>
+
+      <h5 class="first">Color Dos</h5>
+      <span class="ui-float-label">
+      <input id="colorDos" name="colorDos"  size="30" pInputText [(ngModel)]="colorDos" #textoColorDos>
+      <label for="colorDos"></label>
+    </span>
+
+      <h5 class="first">Modelo</h5>
+      <span class="ui-float-label">
+      <input id="nombreModelo" name="nombreModelo" type="text" size="30" pInputText [(ngModel)]="nombreModelo" #textoModelo>
+      <label for="nombreModelo"></label>
+    </span>
+
+      <h5 class="first">Año</h5>
+      <span class="ui-float-label">
+      <input id="anio" name="anio" size="30" pInputText [(ngModel)]="anio" #textoAnio>
+      <label for="anio"></label>
+    </span>
+
+    </form>
+    <p-button (onClick)="colocarDetalles(textoChasis.value,textoNombreMarca.value, textoColorUno.value, textoColorDos.value, textoModelo.value, textoAnio.value)" label="Crear"></p-button>
+    <p-button (onclick)="limpiar()" label="Limpiar"></p-button>
+  </div>
+  <div class="col-sm-6">
+
+    <p-card title="CARD">
+
+      <label style="font-weight: bold">Nombre:</label>
+      {{detalles}}
+      <br>
+      <label style="font-weight: bold">Chasis:</label>
+      {{chasisDetalle}}
+      <br>
+      <label style="font-weight: bold">Nombre Marca:</label>
+      {{nombreMarcaAuto}}
+      <br>
+      <label style="font-weight: bold">Color Uno:</label>
+      {{colorUnoAuto}}
+      <br>
+    </p-card>
+  </div>
+</div>
+
 <app-tabla></app-tabla>

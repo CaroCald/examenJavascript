@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Conductor, ConductorService} from "../conductor.service";
+import {ConductorService1} from "../conductor/conductor-service1";
 
 @Component({
   selector: 'app-grilla',
@@ -18,38 +19,40 @@ export class GrillaComponent implements OnInit, OnChanges{
   @Input() urlImagen:string;
   @Input() valorBotonCrear='';
   contador:number;
-  card:string;
-  arregloNuevo: Conductor[];
-  constructor(private conductor:ConductorService) {
+
+  textoGrilla:string;
+
+arregloDatos=[];
+  mensajeDatos = [];
+  datosConductores = [];
+
+  constructor(private condutorservicio: ConductorService1) {
   }
   ngOnInit() {
-
+    this.condutorservicio.mensajeActual.subscribe(mensaje => this.mensajeDatos = mensaje);
+    this.mostrarElementos();
   }
+
   ngOnChanges(propiedadesActualizadas) {
     console.log('Algo', propiedadesActualizadas);
   }
-  crearConductores(nombresForm, apellidosForm, fechaForm, numeroAutosForm, licenciaForm){
-    this.conductor.anadirCondutores(nombresForm, apellidosForm, fechaForm, numeroAutosForm, licenciaForm, 1);
-    console.log(this.conductor.conductoresArreglo);
-    this.card=this.colocarValor();
-    this.arregloNuevo=this.conductor.devolverArreglo();
-    this.clickEnBoton();
-  }
-  limpiar() {
-    this.nombres="";
-    this.apellidos="";
-    this.numeroAutos=0;
-    this.fechaNacimiento="";
-    this.licenciaValida=false;
-  }
-  hizoClickEnEstado() {
-    this.dioClickEnEstado.emit(true);
-  }
-  colocarValor(){
-    return this.nombres+'  '+ this.apellidos+ '  ';
-  }
 
   clickEnBoton(){
-    return this.nombres;
+    this.textoGrilla='aaaa';
+  }
+
+  enviarDatos(index) {
+    this.datosConductores = [];
+    this.datosConductores.push(this.mensajeDatos[index]);
+    this.condutorservicio.cambiarMensaje2(this.datosConductores);
+    this.mostrarElementos();
+  }
+
+  mostrarElementos() {
+
+    const mostrarTarjeta = <HTMLFormElement>document.getElementById('card');
+    return mostrarTarjeta;
+
+
   }
 }

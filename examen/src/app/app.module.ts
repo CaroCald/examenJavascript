@@ -16,6 +16,7 @@ import {ButtonModule} from 'primeng/button';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TablaComponent } from './tabla/tabla.component';
 import {CarouselModule} from "primeng/primeng";
+import {MatRadioModule} from "@angular/material";
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,7 @@ import {CarouselModule} from "primeng/primeng";
   ],
   imports: [
     BrowserModule, FormsModule, CardModule,TableModule, ButtonModule, NgbModule.forRoot(),
-    BrowserAnimationsModule, MatFormFieldModule, MatInputModule, MatButtonModule, CarouselModule,
+    BrowserAnimationsModule, MatFormFieldModule, MatInputModule, MatButtonModule, CarouselModule, MatRadioModule,
   ],
   providers: [ConductorService, GrillaComponent ],
   bootstrap: [AppComponent, CabeceraComponent]

@@ -2,9 +2,12 @@
 <div class="row">
   <div class="col-sm-6" >
     <h1>DETALLES</h1>
+
+    <form id="formDetalle" class="example-form" #detalle="ngForm">
+
     <h5 class="first">Chasis</h5>
     <span class="ui-float-label">
-      <input id="chasis" name="chasis" size="30" [(ngModel)]="chasis" pInputText #textoChasis>
+      <input id="chasis" name="chasis" size="30" value="chasis" [(ngModel)]="chasis" pInputText #textoChasis>
       <label for="chasis"></label>
     </span>
 
@@ -37,13 +40,23 @@
       <input id="anio" name="anio" size="30" pInputText [(ngModel)]="anio" #textoAnio>
       <label for="anio"></label>
     </span>
+
+    </form>
     <p-button (onClick)="colocarDetalles(textoChasis.value,textoNombreMarca.value, textoColorUno.value, textoColorDos.value, textoModelo.value, textoAnio.value)" label="Crear"></p-button>
-    <p-button (onclick)="limpiar()" label="Limpiar"></p-button>
+    <p-button (onclick)="resetForm(chasis)" label="Limpiar"></p-button>
   </div>
   <div class="col-sm-6">
-    <h1>CARD</h1>
+
     <p-card title="CARD">
-      {{detalles}}
+      <label style="font-weight: bold">Chasis:</label>
+      {{chasisDetalle}}
+      <br>
+      <label style="font-weight: bold">Nombre Marca:</label>
+      {{nombreMarcaAuto}}
+      <br>
+      <label style="font-weight: bold">Color Uno:</label>
+      {{colorUnoAuto}}
+      <br>
     </p-card>
   </div>
 </div>
